@@ -1,0 +1,39 @@
+show dbs
+use db_name
+show collections
+
+db.createCollection("Ledger")
+db.createCollection("Product")
+db.createCollection("InvoiceMode")
+db.createCollection("InvoiceMaster")
+db.createCollection("InvoiceDetail")
+
+db.InvoiceMode.Insert({Name: "Cash", Description: "Cash"})
+db.InvoiceMode.insert({Name: "Credit", Description: "Credit"})
+db.InvoiceMode.find()
+
+db.Product.insert({Name: "Prd1", HSNCode: "11", BuyingPrice: 100, 
+				   SellingPrice:150, TaxPercentage: 18, BuyingPriceInclusiveTax: 118, 
+				   SellingPriceInclusiveTax: 177, UnitName:"Piece", BrandName:"Brnd1", 
+				   MaximumRetailPrice: 200, ProductCode:"", CreatedBy: "Prem", 
+				   CreatedOn: new Date("<YYYY-mm-ddTHH:MM:ss>"),ModifiedBy:"", ModifiedOn:"" 
+				 })
+				 
+{ "_id" : ObjectId("600bb219f0c625f0863fce84"), "Name" : "Prd1", "HSNCode" : "11", "BuyingPrice" : 100, "SellingPrice" : 150, "TaxPercentage" : 18, "BuyingPriceInclusiveTax" : 118, "SellingPriceInclusiveTax" : 177, "UnitName" : "Piece", "BrandName" : "Brnd1", "MaximumRetailPrice" : 200, "ProductCode" : "", "CreatedBy" : "Prem", "CreatedOn" : ISODate("1970-01-01T00:00:00Z"), "ModifiedBy" : "", "ModifiedOn" : "" }
+{ "_id" : ObjectId("600bb292f0c625f0863fce85"), "Name" : "Prd2", "HSNCode" : "11", "BuyingPrice" : 100, "SellingPrice" : 150, "TaxPercentage" : 18, "BuyingPriceInclusiveTax" : 118, "SellingPriceInclusiveTax" : 177, "UnitName" : "Piece", "BrandName" : "Brnd1", "MaximumRetailPrice" : 200, "ProductCode" : "", "CreatedBy" : "Prem", "CreatedOn" : ISODate("1970-01-01T00:00:00Z"), "ModifiedBy" : "", "ModifiedOn" : "" }
+{ "_id" : ObjectId("600bb2a7f0c625f0863fce86"), "Name" : "Prd3", "HSNCode" : "11", "BuyingPrice" : 100, "SellingPrice" : 150, "TaxPercentage" : 18, "BuyingPriceInclusiveTax" : 118, "SellingPriceInclusiveTax" : 177, "UnitName" : "Piece", "BrandName" : "Brnd1", "MaximumRetailPrice" : 200, "ProductCode" : "", "CreatedBy" : "Prem", "CreatedOn" : ISODate("1970-01-01T00:00:00Z"), "ModifiedBy" : "", "ModifiedOn" : "" }
+{ "_id" : ObjectId("600bb2bcf0c625f0863fce87"), "Name" : "Prd4", "HSNCode" : "11", "BuyingPrice" : 100, "SellingPrice" : 150, "TaxPercentage" : 18, "BuyingPriceInclusiveTax" : 118, "SellingPriceInclusiveTax" : 177, "UnitName" : "Piece", "BrandName" : "Brnd1", "MaximumRetailPrice" : 200, "ProductCode" : "", "CreatedBy" : "Prem", "CreatedOn" : ISODate("1970-01-01T00:00:00Z"), "ModifiedBy" : "", "ModifiedOn" : "" }
+{ "_id" : ObjectId("600bb2cff0c625f0863fce88"), "Name" : "Prd5", "HSNCode" : "11", "BuyingPrice" : 100, "SellingPrice" : 150, "TaxPercentage" : 18, "BuyingPriceInclusiveTax" : 118, "SellingPriceInclusiveTax" : 177, "UnitName" : "Piece", "BrandName" : "Brnd1", "MaximumRetailPrice" : 200, "ProductCode" : "", "CreatedBy" : "Prem", "CreatedOn" : ISODate("1970-01-01T00:00:00Z"), "ModifiedBy" : "", "ModifiedOn" : "" }
+
+db.Ledger.insert({FirmName: "FN1", Alias:"Al1", ContactPerson:"Prem Shankar", PAN:"", Aadhar:"", 
+				  Landline:"", Mobile1:"8084779449", Mobile2:"", Email:"shankarprem94@gmail.com", 
+				  Address1:"Add1", Address2:"Add2", City:"Hyd", PostalCode:"500081", District:"Hyd", 
+				  State:"Telangana", Country:"India", CreditLimit:"500000", GSTIN:"", DefaultDueInDays:30, 
+				  CreatedBy:"Prem", CreatedOn:new Date("<YYYY-mm-ddTHH:MM:ss>"),ModifiedBy:"", ModifiedOn:""
+				 })
+db.Ledger.find()
+{ "_id" : ObjectId("600d0f5c93af298991621d76"), "FirmName" : "FN1", "Alias" : "Al1", "ContactPerson" : "Prem", "PAN" : "", "Aadhar" : "", "Landline" : "", "Mobile1" : "8084779449", "Mobile2" : "", "Email" : "shankarprem94@gmail.com", "Address1" : "Add1", "Address2" : "Add2", "City" : "Hyd", "PostalCode" : "500081", "District" : "Hyd", "State" : "Telangana", "Country" : "India", "CreditLimit" : "500000", "GSTIN" : "", "DefaultDueInDays" : 30, "CreatedBy" : "Prem", "CreatedOn" : ISODate("1970-01-01T00:00:00Z"), "ModifiedBy" : "", "ModifiedOn" : "" }
+{ "_id" : ObjectId("600d0f8a93af298991621d77"), "FirmName" : "FN2", "Alias" : "Al2", "ContactPerson" : "Shankar", "PAN" : "", "Aadhar" : "", "Landline" : "", "Mobile1" : "8084779449", "Mobile2" : "", "Email" : "shankarprem94@gmail.com", "Address1" : "Add1", "Address2" : "Add2", "City" : "Hyd", "PostalCode" : "500081", "District" : "Hyd", "State" : "Telangana", "Country" : "India", "CreditLimit" : "500000", "GSTIN" : "", "DefaultDueInDays" : 30, "CreatedBy" : "Prem", "CreatedOn" : ISODate("1970-01-01T00:00:00Z"), "ModifiedBy" : "", "ModifiedOn" : "" }
+{ "_id" : ObjectId("600d0fa293af298991621d78"), "FirmName" : "FN3", "Alias" : "Al3", "ContactPerson" : "P Shankar", "PAN" : "", "Aadhar" : "", "Landline" : "", "Mobile1" : "8084779449", "Mobile2" : "", "Email" : "shankarprem94@gmail.com", "Address1" : "Add1", "Address2" : "Add2", "City" : "Hyd", "PostalCode" : "500081", "District" : "Hyd", "State" : "Telangana", "Country" : "India", "CreditLimit" : "500000", "GSTIN" : "", "DefaultDueInDays" : 30, "CreatedBy" : "Prem", "CreatedOn" : ISODate("1970-01-01T00:00:00Z"), "ModifiedBy" : "", "ModifiedOn" : "" }
+{ "_id" : ObjectId("600d0fc393af298991621d79"), "FirmName" : "FN4", "Alias" : "Al4", "ContactPerson" : "Prem Singh", "PAN" : "", "Aadhar" : "", "Landline" : "", "Mobile1" : "8084779449", "Mobile2" : "", "Email" : "shankarprem94@gmail.com", "Address1" : "Add1", "Address2" : "Add2", "City" : "Hyd", "PostalCode" : "500081", "District" : "Hyd", "State" : "Telangana", "Country" : "India", "CreditLimit" : "500000", "GSTIN" : "", "DefaultDueInDays" : 30, "CreatedBy" : "Prem", "CreatedOn" : ISODate("1970-01-01T00:00:00Z"), "ModifiedBy" : "", "ModifiedOn" : "" }
+{ "_id" : ObjectId("600d0fde93af298991621d7a"), "FirmName" : "FN5", "Alias" : "Al5", "ContactPerson" : "Prem Shankar", "PAN" : "", "Aadhar" : "", "Landline" : "", "Mobile1" : "8084779449", "Mobile2" : "", "Email" : "shankarprem94@gmail.com", "Address1" : "Add1", "Address2" : "Add2", "City" : "Hyd", "PostalCode" : "500081", "District" : "Hyd", "State" : "Telangana", "Country" : "India", "CreditLimit" : "500000", "GSTIN" : "", "DefaultDueInDays" : 30, "CreatedBy" : "Prem", "CreatedOn" : ISODate("1970-01-01T00:00:00Z"), "ModifiedBy" : "", "ModifiedOn" : "" }
